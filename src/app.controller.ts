@@ -7,7 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): { message: string } {
-    // return this.appService.getHello();
-    return { message: 'Welcome to NestJS Intro' };
+    const message = this.appService.getWelcomeMsg();
+    return { message };
   }
 }

@@ -9,7 +9,15 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@config/*": ["src/config/*"],
+      "@entities/*": ["src/database/entities/*"],
+      "@middleware/*": ["src/middleware/*"],
+      "@models/*": ["src/database/models/*"],
+      "@modules/*": ["src/modules/*"],
+      "@repositories/*": ["src/database/repositories/*"],
+    }
   },
   "exclude": ["node_modules", "dist"]
 }

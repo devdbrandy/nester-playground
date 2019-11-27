@@ -1,7 +1,7 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, HttpException, HttpStatus } from '@nestjs/common';
 import * as shortID from 'shortid';
 
-import { Product } from 'src/models/product.model';
+import { Product } from '../../../database/models/product.model';
 
 @Injectable()
 export class ProductsService {
@@ -41,7 +41,7 @@ export class ProductsService {
     const index = this.products.findIndex(item => item.id === id);
     const product = this.products[index];
     if (!product) {
-      throw new NotFoundException('Could not find product.');
+      throw new HttpException('Could not find product.', HttpStatus.NOT_FOUND);
     }
 
     return [product, index];
