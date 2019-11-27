@@ -1,17 +1,15 @@
+import { IsString, IsNumber } from 'class-validator';
+
 // Where `Dto` stands for Data Transfer Object, usually this is the request body
 // And `Ro` is Response Object
 
-export interface CreateProductDto {
-  name: string;
-}
-
-export interface UpdateProductDto {
+export class CreateProductDto {
+  @IsString()
   title: string;
+
+  @IsString()
   description: string;
+
+  @IsNumber()
   price: number;
 }
-
-// export interface ProductRo {
-//   id: number;
-//   name: string;
-// }

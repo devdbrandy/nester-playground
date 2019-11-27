@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
 import { Product } from '@models/product.model';
 import { ProductsService } from '../services/products.service';
-import { UpdateProductDto } from '../products.dto';
+import { CreateProductDto } from '../products.dto';
 
 @Controller('products')
 export class ProductsController {
@@ -10,10 +10,12 @@ export class ProductsController {
 
   @Post()
   addProduct(
-    @Body('title') title: string,
-    @Body('description') description: string,
-    @Body('price') price: number,
+    // @Body('title') title: string,
+    // @Body('description') description: string,
+    // @Body('price') price: number,
+    @Body() data: CreateProductDto,
   ): { id: string } {
+    const { title, description, price } = data;
     const productId = this.productsService.addProduct(title, description, price);
     return { id: productId };
   }
@@ -33,7 +35,7 @@ export class ProductsController {
   @Patch(':id')
   updateProduct(
     @Param('id') id: string,
-    @Body() body: UpdateProductDto,
+    @Body() body: any,
   ): { message: string } {
     this.productsService.updateProduct(id, body);
     return { message: 'Product successfully updated.' };
