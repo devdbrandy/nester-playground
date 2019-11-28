@@ -12,7 +12,6 @@
     "incremental": true,
     "paths": {
       "@config/*": ["src/config/*"],
-      "@entities/*": ["src/database/entities/*"],
       "@middleware/*": ["src/middleware/*"],
       "@models/*": ["src/database/models/*"],
       "@modules/*": ["src/modules/*"],
