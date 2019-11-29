@@ -64,7 +64,10 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "./coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@models(.*)$": "<rootDir>/database/models/$1"
+    }
   }
 }
