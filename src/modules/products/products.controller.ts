@@ -12,7 +12,7 @@ export class ProductsController {
     @Body() productData: CreateProductDto,
   ) {
     const product = await this.productsService.createProduct(productData);
-    return { product };
+    return { id: product.id };
   }
 
   @Get()
@@ -39,6 +39,6 @@ export class ProductsController {
   @Delete(':id')
   destroyProduct(@Param('id') id: number) {
     this.productsService.destroyProduct(id);
-    return { message: 'Product successfully removed' };
+    return { message: 'Product successfully removed.' };
   }
 }
