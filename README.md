@@ -1,5 +1,5 @@
 <p align="center">
-  A progressive web app buildt with <a href="http://nestjs.com" target="blank">Nest.js</a> framework.
+  A progressive web app built with <a href="http://nestjs.com" target="blank">Nest.js</a> framework.
 </p>
 
 <p align="center">
