@@ -33,7 +33,7 @@
     "rxjs": "^6.5.3",
     "shortid": "^2.2.15",
     "swagger-ui-express": "^4.1.2",
-    "typeorm": "^0.2.20"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.9.0",
